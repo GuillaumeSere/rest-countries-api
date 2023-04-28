@@ -1,0 +1,41 @@
+.dark{
+    background: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+}
+.dark .link {
+    background: rgb(43, 57, 69);
+}
+.dark .card-text {
+    color:hsl(0, 0%, 100%);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    box-shadow:0 3px 3px rgba(52, 52, 52, 0.2);
+}
+.header h1{
+    font-size: 24px;
+    margin-left: 5rem;
+}
+.dark-mode-toggle{
+    margin-right: 5rem;
+    cursor: pointer;
+}
+.dark-mode-toggle span{
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+
+@media (max-width: 890px){
+    .header h1{
+        font-size: 16px;
+        margin-left: 1rem;
+    }
+    .dark-mode-toggle{
+        margin-right: 1rem;
+    }
+}
