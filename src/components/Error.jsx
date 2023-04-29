@@ -8,7 +8,7 @@ const Error = () => {
             <h2 tabIndex="0" id="page-title" className="error-msg">
                 Page not found
             </h2>
-            <Link to='/'>Retourner sur la page d’accueil</Link>
+            <Link to='/' className='error'>Retourner sur la page d’accueil</Link>
         </main>
     )
 }

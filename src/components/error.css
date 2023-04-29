@@ -1,0 +1,19 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25rem;
+}
+main h2{
+    font-size: 30px;
+}
+.error{
+    text-decoration: none;
+    margin-top: 1rem;
+    font-size: 20px;
+    color: black;
+}
+.dark .error{
+    color: white;
+}
