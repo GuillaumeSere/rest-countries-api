@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import CountryDetail from './components/CountryDetail';
 import { useState } from 'react';
+import Error from './components/Error';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home darkMode={darkMode} />} />
                 <Route path="/country/:id" element={<CountryDetail />} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </>
     );

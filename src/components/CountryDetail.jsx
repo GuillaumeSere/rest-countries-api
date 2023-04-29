@@ -24,25 +24,33 @@ const CountryDetail = () => {
             <Link to="/" className="links"><BiArrowBack />Back</Link>
             <img className="image" src={country.flag} alt={country.name} />
             <div className="description">
-                <h2>{country.name}</h2>
+                <h2>{country.name || 'N/A'}</h2>
                 <div className="description-info">
                     <div className="info-country">
-                        <p>Native Name: <span>{country.nativeName}</span></p>
-                        <p>Population: <span>{country.population}</span></p>
-                        <p>Region: <span>{country.region}</span></p>
-                        <p>Sub Region: <span>{country.subregion}</span></p>
-                        <p>Capital: <span>{country.capital}</span></p>
+                        {country.nativeName && (
+                        <p>Native Name: <span>{country.nativeName ?? 'Unknown'}</span></p>
+                        )}
+                        <p>Population: <span>{country.population ?? 'Unknown'}</span></p>
+                        <p>Region: <span>{country.region ?? 'Unknown'}</span></p>
+                        {country.subregion && (
+                        <p>Sub Region: <span>{country.subregion ?? 'Unknown'}</span></p>
+                        )}
+                        {country.capital && (
+                        <p>Capital: <span>{country.capital ?? 'Unknown'}</span></p>
+                        )}
                     </div>
                     <div className="info-languages">
-                        <p>Top Level Domain: <span>{country.topLevelDomain}</span></p>
+                        <p>Top Level Domain: <span>{country.topLevelDomain || 'N/A'}</span></p>
+                        {country.currencies && (
                         <p>Currencies: <span>{country.currencies.map((currency) => currency.name).join(", ")}</span></p>
+                        )}
                         <p>Languages: <span>{country.languages.map((language) => language.name).join(", ")}</span></p>
                     </div>
                 </div>
                 <div className="border-country">
                     <h3>Border Countries:</h3>
                     <div className="border-link">
-                        {country.borders.map((border) => (
+                        {country.borders && country.borders.map((border) => (
                             <Link to={`/country/${border}`} key={border}>
                                 {border}
                             </Link>

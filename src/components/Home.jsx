@@ -17,6 +17,7 @@ const Home = ({ darkMode }) => {
             .then((data) => setCountries(data))
             .catch((error) => console.log(error));
     }, []);
+    console.log(countries)
 
     const filteredCountries = countries.filter((country) =>
         country.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -85,14 +86,14 @@ const Home = ({ darkMode }) => {
                 </select>
             </div>
             <div className="container-card">
-                {currentCountries.map((country) => (
-                    <Link className={`link ${darkMode ? 'dark' : ''}`} to={`/country/${country.alpha3Code}`} key={country.alpha3Code}>
-                        <img src={country.flag} alt={country.name} className={`${darkMode ? 'dark' : ''}`} />
+                {currentCountries?.map((country) => (
+                    <Link className={`link ${darkMode ? 'dark' : ''}`} to={`/country/${country.alpha3Code ?? 'Unknown'}`} key={country.alpha3Code}>
+                        <img src={country.flag || 'N/A'} alt={country.name} className={`${darkMode ? 'dark' : ''}`} />
                         <div className={`info ${darkMode ? 'dark' : ''}`} >
-                            <h3 className={`card-text ${darkMode ? 'dark' : ''}`}>{country.name}</h3>
-                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Population:  <span>{country.population}</span></p>
-                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Region: <span>{country.region}</span></p>
-                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Capital: <span>{country.capital}</span></p>
+                            <h3 className={`card-text ${darkMode ? 'dark' : ''}`}>{country.name || 'N/A'}</h3>
+                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Population:  <span>{country.population ?? 'Unknown'}</span></p>
+                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Region: <span>{country.region ?? 'Unknown'}</span></p>
+                            <p className={`card-text ${darkMode ? 'dark' : ''}`}>Capital: <span>{country.capital ?? 'Unknown'}</span></p>
                         </div>
                     </Link>
                 ))}
