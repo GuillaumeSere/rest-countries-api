@@ -1,11 +1,11 @@
-main{
+.not-found{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top: 25rem;
 }
-main h2{
+.not-found h2{
     font-size: 30px;
 }
 .error{

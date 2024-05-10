@@ -60,6 +60,7 @@ const Home = ({ darkMode }) => {
     };
 
     return (
+        <main>
         <div className={`container ${darkMode ? 'dark' : ''}`}>
             <div className={`search-input ${darkMode ? 'dark' : ''}`}>
                 <div className={`input ${darkMode ? 'dark' : ''}`}>
@@ -73,7 +74,6 @@ const Home = ({ darkMode }) => {
                     />
                 </div>
                 <select
-                    value={regionFilter}
                     onChange={(event) => setRegionFilter(event.target.value)}
                     className={`select ${darkMode ? 'dark' : ''}`}
                 >
@@ -110,6 +110,7 @@ const Home = ({ darkMode }) => {
                 </button>
             </div>
         </div>
+        </main>
     );
 };
 
