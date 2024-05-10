@@ -26,13 +26,13 @@ const Header = () => {
     };
 
     return (
-        <div className='header' style={style}>
+        <header className='header' style={style}>
             <h1>Where in the world?</h1>
             <div className="dark-mode-toggle" onClick={handleDarkModeToggle} >
                 <BsMoon />
                 <span>Dark Mode</span>
             </div>
-        </div>
+        </header>
     )
 }
 

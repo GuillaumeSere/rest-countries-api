@@ -76,6 +76,7 @@ const Home = ({ darkMode }) => {
                 <select
                     onChange={(event) => setRegionFilter(event.target.value)}
                     className={`select ${darkMode ? 'dark' : ''}`}
+                    aria-label="State"
                 >
                     <option value="">Filter by region</option>
                     <option value="Africa">Africa</option>
@@ -90,7 +91,7 @@ const Home = ({ darkMode }) => {
                     <Link className={`link ${darkMode ? 'dark' : ''}`} to={`/country/${country.alpha3Code ?? 'Unknown'}`} key={country.alpha3Code}>
                         <img src={country.flag || 'N/A'} alt={country.name} className={`${darkMode ? 'dark' : ''}`} />
                         <div className={`info ${darkMode ? 'dark' : ''}`} >
-                            <h3 className={`card-text ${darkMode ? 'dark' : ''}`}>{country.name || 'N/A'}</h3>
+                            <h2 className={`card-text ${darkMode ? 'dark' : ''}`}>{country.name || 'N/A'}</h2>
                             <p className={`card-text ${darkMode ? 'dark' : ''}`}>Population:  <span>{country.population ?? 'Unknown'}</span></p>
                             <p className={`card-text ${darkMode ? 'dark' : ''}`}>Region: <span>{country.region ?? 'Unknown'}</span></p>
                             <p className={`card-text ${darkMode ? 'dark' : ''}`}>Capital: <span>{country.capital ?? 'Unknown'}</span></p>
